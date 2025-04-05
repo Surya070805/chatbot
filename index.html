@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Translator</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+
+</head>
+<body>
+  <header>
+    <h1>Language Translator</h1>
+  </header>
+  <main>
+    <div class="container">
+      <!-- Text Translation Section -->
+      <div class="card">
+        <h2>Translate Text</h2>
+        <form id="text-translation-form" action="/translate-text/" method="post">
+          <textarea name="input_text" placeholder="Enter text to translate..." required></textarea>
+          <select name="target_language" required>
+            <option value="hi">Hindi</option>
+            <option value="ta">Tamil</option>
+            <option value="te">Telugu</option>
+            <option value="kn">Kannada</option>
+            <option value="ml">Malayalam</option>
+            <option value="gu">Gujarati</option>
+            <option value="mr">Marathi</option>
+            <option value="bn">Bengali</option>
+            <option value="pa">Punjabi</option>
+          </select>
+          <button type="submit">Translate</button>
+        </form>
+        <div id="text-translation-output"></div>
+      </div>
+
+      <!-- File Translation Section -->
+      <div class="card">
+        <h2>Translate File</h2>
+        <form id="file-translation-form" action="/translate-file/" method="post" enctype="multipart/form-data">
+          <input type="file" name="uploaded_file" accept=".txt" required />
+          <select name="target_language" required>
+            <option value="hi">Hindi</option>
+            <option value="ta">Tamil</option>
+            <option value="te">Telugu</option>
+            <option value="kn">Kannada</option>
+            <option value="ml">Malayalam</option>
+            <option value="gu">Gujarati</option>
+            <option value="mr">Marathi</option>
+            <option value="bn">Bengali</option>
+            <option value="pa">Punjabi</option>
+          </select>
+          <button type="submit">Translate</button>
+        </form>
+        <div id="file-translation-output"></div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
